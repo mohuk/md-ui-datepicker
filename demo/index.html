@@ -8,8 +8,14 @@
 	</head>
 
 	<body ng-app="app">
-		<div>
-			<datepicker ng-model="dt" min-date="minDate" show-weeks="false" class="well well-sm" custom-class="getDayClass(date, mode)"></datepicker>
+		<div ng-controller="appCtrl as vm">
+			<datepicker ng-model="vm.dt"
+        min-date="vm.minDate"
+        max-date="vm.maxDate"
+        show-weeks="vm.showWeeks"
+        max-mode="day"
+        custom-class = "vm.inRange(date)">
+      </datepicker>
 		</div>
     	<script src="../src/bower_components/angular/angular.js"></script>
     	<script src="../src/bower_components/angular-animate/angular-animate.js"></script>
