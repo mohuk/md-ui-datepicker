@@ -1,3 +1,16 @@
+::-moz-selection { /* Code for Firefox */
+    background: transparent;
+
+}
+
+::selection {
+    background: transparent;
+}
+
+.time-date {
+    width: 240px;
+    outline: none;
+}
 .datepicker {
     background: #ffffff;
     -webkit-box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.4);
@@ -5,7 +18,8 @@
     box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.4);
     margin: 20px 0px 0px 20px;
     display: inline-block;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'RobotoDraft', sans-serif;
+    outline: none;
 }
 
 .datepicker button {
@@ -16,8 +30,8 @@
 .titles {
     background-color: #939498;
     color: #ffffff;
-    padding: 10px 0;
-    height: 40px;
+    padding: 0;
+    height: 44px;
 }
 
 .datepicker .titles button.arrows {
@@ -49,18 +63,53 @@
 
 .headers {
     background: #ebebeb;
-    height: 30px;
+    height: 36px;
     color: #737373;
+    text-align: center;
+    padding: 0px 5px;
+}
+
+.headers div {
+    display: inline-block;
+    line-height: 36px;
+    padding: 0px 10px;
 }
 
 .headers small {
-    font-size: 14px;
+    font-size: 16px;
 }
 
+.weeks {
+    text-align: center;
+}
+
+.weeks div {
+    display: inline-block;
+    line-height: 36px;
+    padding: 0;
+}
+
+.days {
+    padding: 8px;
+}
+
+
 .days button.active {
+    background-color: #ccc;
+}
+
+.days .range-selected {
     background-color: #c6e8f2;
 }
 
 .datepicker .days button {
     font-size: 14px;
+    padding: 5px 8px;
+}
+
+.month-year {
+    display: inline-block;
+    text-align: center;
+    margin: 10px auto 0 auto;
+    width: 150px;
 }

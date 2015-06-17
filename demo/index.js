@@ -14,8 +14,9 @@
       ///////////////
 
       function inRange(date){
+        return date > new Date('06-15-2015') ? 'range-selected' : '';
         //check if incoming date is in date range ?
       }
-		});
+	});
 
 }());
