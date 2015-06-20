@@ -44,6 +44,7 @@ gulp.task('default', function(){
     .pipe(gulp.src(componentSrc))
     .pipe(concat('md-ui-datepicker.js'))
     .pipe(replace(templates.from, templates.to))
+    .pipe(replace('../template/',''))
     .pipe(gulp.dest('dist/'));
 });
 

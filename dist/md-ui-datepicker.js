@@ -19,7 +19,7 @@
 	  return {
 	    restrict: 'EA',
 	    replace: true,
-	    templateUrl: '../template/datepicker.html',
+	    templateUrl: 'datepicker.html',
 	    scope: {
 	      datepickerMode: '=?',
 	      dateDisabled: '&',
