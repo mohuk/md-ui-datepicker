@@ -9,13 +9,27 @@
 
 	<body ng-app="app">
 		<div ng-controller="appCtrl as vm">
+    <div>
 			<datepicker ng-model="vm.dt"
         min-date="vm.minDate"
         max-date="vm.maxDate"
         show-weeks="vm.showWeeks"
         max-mode="day"
-        custom-class = "vm.inRange(date)">
+        custom-class="vm.inRange(date)">
       </datepicker>
+    </div>
+
+    <div>
+      <span datepicker-popup="{{format}}"
+        ng-model="dt" is-open="isOpen"
+        min-date="minDate" max-date="'2015-06-22'"
+        date-disabled="disabled(date, mode)"
+        ng-required="true" close-text="Close"
+        show-weeks="false" ng-click="isOpen = !!!isOpen"
+        datepicker-options="vm.datepickerOptions"
+        show-button-bar="false"> Dan the Man !
+      </span>
+    </div>
 		</div>
     	<script src="../bower_components/angular/angular.js"></script>
     	<script src="../bower_components/angular-animate/angular-animate.js"></script>

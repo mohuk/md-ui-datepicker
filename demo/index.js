@@ -10,6 +10,9 @@
       vm.maxDate = '12-31-' + currentYear;
 
       vm.inRange = inRange;
+      vm.datepickerOptions = {
+        maxMode: 'date'
+      };
 
       ///////////////
 
