@@ -14,8 +14,8 @@ var componentSrc = [
   'src/datepicker.js',
   'src/dateparser/dateParser.js',
   'src/position/position.js',
-  'src/datePickerConfig.js',
   'src/DatepickerController.js',
+  'src/datepickerConfig.js',
   'src/datepickerPopup.js',
   'src/datepickerPopupConfig.js',
   'src/datepickerPopupWrap.js',
@@ -38,14 +38,20 @@ var templates = {
   to: 'angular.module("ui.bootstrap", [\n\t\t"ui.bootstrap.datepicker.templates",'
 }
 
-gulp.task('default', function(){
-  return gulp.src(templatesSrc)
+gulp.task('templates', function(){
+  gulp.src(templatesSrc.concat(['md-ui-datepicker.js']))
     .pipe(ngTemplates('ui.bootstrap.datepicker.templates'))
-    .pipe(gulp.src(componentSrc))
+    .pipe(concat('md-ui-datepicker.js'))
+    .pipe(gulp.dest('dist/'));
+})
+
+gulp.task('default', ['templates'], function(){
+  gulp.src(componentSrc.concat(['dist/md-ui-datepicker.js']))
     .pipe(concat('md-ui-datepicker.js'))
     .pipe(replace(templates.from, templates.to))
     .pipe(replace('../template/',''))
-    .pipe(gulp.dest('dist/'));
+    .pipe(gulp.dest('dist/'))
+
 });
 
 function inc(importance) {
