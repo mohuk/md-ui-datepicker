@@ -6,8 +6,11 @@ var bump = require('gulp-bump');
 var git = require('gulp-git');
 var tagVersion = require('gulp-tag-version');
 var filter = require('gulp-filter');
+var ngTemplates = require('gulp-ng-templates');
+var replace = require('gulp-replace');
 
 var componentSrc = [
+  'src/uibootstrap.js',
   'src/datepicker.js',
   'src/dateparser/dateParser.js',
   'src/position/position.js',
@@ -18,20 +21,29 @@ var componentSrc = [
   'src/datepickerPopupWrap.js',
   'src/daypicker.js',
   'src/monthpicker.js',
-  'src/yearpicker.js',
-  'src/ui.bootstrap.js'
+  'src/yearpicker.js'
 ];
+
+var templatesSrc = [
+  'template/*.html'
+]
 
 var pkgFiles = [
   './bower.json',
   './package.json'
 ];
 
+var templates = {
+  from: 'angular.module("ui.bootstrap", [',
+  to: 'angular.module("ui.bootstrap", [\n\t\t"ui.bootstrap.datepicker.templates",'
+}
+
 gulp.task('default', function(){
-  return gulp.src(files)
+  return gulp.src(templatesSrc)
+    .pipe(ngTemplates('ui.bootstrap.datepicker.templates'))
+    .pipe(gulp.src(componentSrc))
     .pipe(concat('md-ui-datepicker.js'))
-    .pipe(ngAnnotate())
-    //.pipe(uglify())
+    .pipe(replace(templates.from, templates.to))
     .pipe(gulp.dest('dist/'));
 });
 
