@@ -23,7 +23,7 @@
     "angular": "*",
     "angular-material": "*",
     "font-awesome": "*"
-  }
+  },
   "license": "MIT",
   "dependencies": {
     "angular": "1.3.15",
