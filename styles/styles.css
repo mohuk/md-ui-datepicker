@@ -8,18 +8,24 @@
 }
 
 .time-date {
-    width: 240px;
+    width: 220px;
     outline: none;
 }
 .datepicker {
     background: #ffffff;
-    -webkit-box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.4);
-    -moz-box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.4);
-    box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.4);
-    margin: 20px 0px 0px 20px;
+    -webkit-box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.25);
+    box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.25);
+    margin: 0px 0px 20px 0px;
     display: inline-block;
     font-family: 'RobotoDraft', sans-serif;
     outline: none;
+}
+
+.duration-div .datepicker {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
 }
 
 .datepicker button {
@@ -31,34 +37,42 @@
     background-color: #939498;
     color: #ffffff;
     padding: 0;
-    height: 44px;
+    height: 36px;
 }
 
 .datepicker .titles button.arrows {
     border: 2px solid #fff;
     padding: 0;
     border-radius: 100%;
-    height: 24px;
-    width: 24px;
+    height: 20px;
+    width: 20px;
     color: #fff;
     text-align: center;
-    margin: 10px;
-    font-size: 12px;
+    margin: 8px 4px;
+    font-size: 10px;
+    line-height: 17px;
 }
 
 .datepicker .titles button.arrows .fa-chevron-left {
-    margin-top: 1px;
+    margin-top: 0px;
     margin-right: 3px;
 }
 
 .datepicker .titles button.arrows .fa-chevron-right {
-    margin-top: 1px;
+    margin-top: 0px;
     margin-left: 2px;
 }
 
 .titles strong {
     color: #fff;
     font-weight: 500;
+    font-size: 15px;
+}
+
+.duration-div .titles strong {
+    font-weight: 400;
+    font-size: 14px;
+    text-transform: uppercase;
 }
 
 .headers {
@@ -66,17 +80,17 @@
     height: 36px;
     color: #737373;
     text-align: center;
-    padding: 0px 5px;
+    padding: 0;
 }
 
 .headers div {
     display: inline-block;
     line-height: 36px;
-    padding: 0px 10px;
+    padding: 0 10px;
 }
 
 .headers small {
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .weeks {
@@ -85,12 +99,11 @@
 
 .weeks div {
     display: inline-block;
-    line-height: 36px;
     padding: 0;
 }
 
 .days {
-    padding: 8px;
+    padding: 4px;
 }
 
 
@@ -103,13 +116,25 @@
 }
 
 .datepicker .days button {
-    font-size: 14px;
-    padding: 5px 8px;
+    font-size: 11px;
+    padding: 5px 7px;
+    width: 30px !important;
 }
 
 .month-year {
     display: inline-block;
     text-align: center;
-    margin: 10px auto 0 auto;
-    width: 150px;
+    margin: 4px auto 0 auto;
+    width: 164px;
+}
+
+.calendar {
+    position: absolute;
+    z-index: 100;
+    right: 22px;
+    top: 40px;
+}
+
+.calendar .titles button {
+     background-color: transparent;
 }
