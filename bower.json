@@ -1,6 +1,6 @@
 {
   "name": "md-ui-datepicker",
-  "main": "dist/md-ui-datepicker.js",
+  "main": ["./dist/md-ui-datepicker.js", "./dist/styles/styles.css"],
   "version": "0.0.0",
   "homepage": "https://github.com/mohuk/md-ui-datepicker",
   "description": "UI Bootstrap date picker with Material Design",
